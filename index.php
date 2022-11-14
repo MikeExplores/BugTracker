@@ -28,7 +28,7 @@
 
     // Render table headings
     echo
-    "<tr><td style=>" . "<h3>Bug ID#</h3>" .
+    "<tr><td style=>" . "<h3>Bug ID</h3>" .
         "</td><td>" . "<h3>Product Name</h3>" .
         "</td><td>" . "<h3>Version</h3>" .
         "</td><td>" . "<h3>Hardware Type</h3>" .
@@ -49,7 +49,11 @@
             "</td><td>" . $row['operating_system'] .
             "</td><td>" . $row['occurrence_frequency'] .
             "</td><td>" . $row['proposed_solution'] .
-            "</td><td>" . "<a href='update.php?bug_id=$counter'>Edit</a>" . "</td></tr>";
+            "</td><td>" . 
+                "<a href='update.php?bug_id=$counter'>Edit</a>" .
+                " | " .
+                "<a href='delete.php?bug_id=$counter'>Delete</a>" . 
+            "</td></tr>";
     $counter++;
     }
     echo "</table>";
@@ -57,10 +61,8 @@
     // Close connection
     mysqli_close($link);
     ?>
-    <p>
-        <!-- Link to create new record -->
-        <a href="insert.php">Add a bug</a>
-    </p>
+    <br>
+    <input type="button" value="Add Bug" onclick="document.location='insert.php'" />
 </body>
 
 </html>
