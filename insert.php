@@ -50,7 +50,7 @@
             header("location:index.php"); 
             exit;
         } else {
-            echo "Could not executed query.";
+            echo "Could not execute query.";
         }
 
         // Close connection
@@ -83,12 +83,10 @@
             <label for="proposedSolution">Proposed Solution:</label>
             <input type="text" name="proposed_solution" id="proposedSolution" required />
         </p>
-        <input type="submit" name="submit" value="Submit" />
+        <input type="submit" name="submit" value="Create" />
         <input type="reset" value="Reset" />
+        <input type="button" value="Back" onclick="document.location='index.php'" />
     </form>
-    <p>
-        <a href="index.php">Return to Bug Tracker</a><br />
-    </p>
 </body>
 
 </html>
