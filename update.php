@@ -70,38 +70,37 @@
     // Close connection
     mysqli_close($link);
     ?>
-    <h1>Update existing bug record:</h1>
-    <form action="update.php?bug_id=<?php echo $id;?>" method="post">
+    <h1>Update record for Bug <?php echo $id?>?</h1>
+    <form action="update.php?bug_id=<?php echo $id?>" method="post">
         <p>
             <label for="productName">Product Name:</label>
-            <input type="text" name="product_name" id="productName" value="<?php echo $response['product_name']; ?>" required />
+            <input type="text" name="product_name" id="productName" value="<?php echo $response['product_name']?>" required />
         </p>
         <p>
             <label for="version">Version:</label>
-            <input type="text" name="version" id="version" value="<?php echo $response['version']; ?>" required />
+            <input type="text" name="version" id="version" value="<?php echo $response['version']?>" required />
         </p>
         <p>
             <label for="hardwareType">Hardware Type:</label>
-            <input type="text" name="hardware_type" id="hardwareType" value="<?php echo $response['hardware_type']; ?>" required />
+            <input type="text" name="hardware_type" id="hardwareType" value="<?php echo $response['hardware_type']?>" required />
         </p>
         <p>
             <label for="operatingSystem">Operating System:</label>
-            <input type="text" name="operating_system" id="operatingSystem" value="<?php echo $response['operating_system']; ?>" required />
+            <input type="text" name="operating_system" id="operatingSystem" value="<?php echo $response['operating_system']?>" required />
         </p>
         <p>
             <label for="occurrenceFrequency">Occurrence Frequency:</label>
-            <input type="text" name="occurrence_frequency" id="occurrenceFrequency" value="<?php echo $response['occurrence_frequency']; ?>" required />
+            <input type="text" name="occurrence_frequency" id="occurrenceFrequency" value="<?php echo $response['occurrence_frequency']?>" required />
         </p>
         <p>
             <label for="proposedSolution">Proposed Solution:</label>
-            <input type="text" name="proposed_solution" id="proposedSolution" value="<?php echo $response['proposed_solution']; ?>" required />
+            <input type="text" name="proposed_solution" id="proposedSolution" value="<?php echo $response['proposed_solution']?>" required />
         </p>
-        <input type="submit" name="update" value="Submit" />
+        <input type="submit" name="update" value="Update" />
         <input type="reset" value="Reset" />
+        <input type="button" value="Delete" onclick="document.location='delete.php?bug_id=<?php echo $id?>'" />
+        <input type="button" value="Back" onclick="document.location='index.php'" />
     </form>
-    <p>
-        <a href="index.php">Return to Bug Tracker</a><br />
-    </p>
 </body>
 
 </html>
